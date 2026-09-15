@@ -1,57 +1,57 @@
 ```text
-  ____    _    ____ _   _ ____
- | __ )  / \  / ___| | | / ___|
- |  _ \ / _ \| |   | | | \___ \
- | |_) / ___ \ |___| |_| |___) |
- |____/_/   \_\____|\___/|____/
+     ██████╗  █████╗  ██████╗ ██╗   ██╗███████╗
+     ██╔══██╗██╔══██╗██╔════╝ ██║   ██║██╔════╝
+     ██████╔╝███████║██║  ███╗██║   ██║███████╗
+     ██╔══██╗██╔══██║██║   ██║██║   ██║╚════██║
+     ██████╔╝██║  ██║╚██████╔╝╚██████╔╝███████║
+     ╚═════╝ ╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚══════╝
 
-        B A G U S   :   F I N E - F M
+             B A G U S  :  F I N E - F M
 
- Basically A Generally Useless Solver
- Fluid Idiot's Numerical Engine for Fluid Mechanics
+        Basically A Generally Useless Solver
+     Fluid Idiot's Numerical Engine for Fluid Mechanics
 
-                 (yes, seriously)
+                    ~ water.exe ~
 
-      +--------------------------------------+
-      |          BLOON  STACK               |
-      |                                      |
-      |   FINE-FM                            |
-      |     |                                |
-      |     v                                |
-      |   BLOON                             |
-      |     |                                |
-      |     v                                |
-      |   BLOON_MACHINE                     |
-      |                                      |
-      +--------------------------------------+
+        +--------------------------------------+
+        |              BLOON STACK             |
+        |                                      |
+        |   FINE-FM                            |
+        |      │                               |
+        |      ▼                               |
+        |    BLOON                             |
+        |      │                               |
+        |      ▼                               |
+        |  BLOON_MACHINE                       |
+        +--------------------------------------+
 
-              \  water in bucket  /
-               \      _____      /
-                \    /     \    /
-                     | ~~~ |
-                     | ~~~ |
-                     |_____| 
+                    __________
+                   /          \
+                  /  ~~~~~~~~  \
+                 |  ~~~~~~~~~~ |
+                 |  ~~~~~~~~~~ |
+                 |  ~~~~~~~~~~ |
+                 |_____________|
 
-     The wrapper is a joke.
-     The numbers are expected to be correct.
+          The wrapper is a joke.
+          The numbers are expected to be correct.
 
-     Fluid statics, because apparently
-     we needed a software architecture
-     to tell us that water has pressure.
+          Fluid statics. Six problems.
+          One bucket. Zero excuses.
 ```
 
 BAGUS: FINE-FM is the fluid-statics companion demo for the BLOON stack.
 
 Supported problems:
 
-- Hydrostatic pressure: `P = P0 + rho*g*h`
-- Pressure difference: `dP = rho*g*dh`
-- Pascal hydraulic: `F2 = F1*A2/A1`
-- Buoyancy: `FB = rho_f*g*V`
-- Hydrostatic surface force: `F = integral(p dA)`
-- Water in a bucket: deliberately trivial, deliberately included
+1. Hydrostatic pressure — `P = P0 + rho*g*h`
+2. Pressure difference — `dP = rho*g*dh`
+3. Pascal hydraulic — `F2 = F1*A2/A1`
+4. Buoyancy — `FB = rho_f*g*V`
+5. Hydrostatic surface force — `F = integral(p dA)`
+6. Water in a bucket — deliberately trivial, deliberately included
 
-No build step. Pure Python. The project uses `NumericBackend` as the numerical seam and keeps the domain layer separate from numerical evaluation and the BLOON_MACHINE policy gate.
+FINE-FM keeps the domain layer separate from numerical evaluation and uses `NumericBackend` as the numerical seam. The intended stack is FINE-FM -> BLOON -> BLOON_MACHINE.
 
 ## Run
 
@@ -68,4 +68,4 @@ python examples/main.py
 python -m pytest tests -v
 ```
 
-The Pygame companion entry point is `examples/main.py`.
+Pygame is the visual companion. Python remains the engine. Water remains suspiciously wet.
